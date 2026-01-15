@@ -6,18 +6,22 @@
   <title>Wyzen — Portfolio</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
 
-  <!-- Loading Screen -->
-<div id="loader">
-  <h1>WY<span>ZEN</span></h1>
-</div>
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <h1>WY<span>ZEN</span></h1>
+  </div>
 
-  <!-- BACKGROUND -->
+  <!-- ===== BACKGROUND ===== -->
   <div class="bg"></div>
 
+  <!-- ===== NAVBAR ===== -->
   <header class="header">
     <h1>WY<span>ZEN</span></h1>
     <nav>
@@ -28,31 +32,67 @@
     </nav>
   </header>
 
+  <!-- ===== HERO ===== -->
   <section id="home" class="hero reveal">
     <h2>Creative <span>Web</span> Developer</h2>
-    <p>I design clean, modern websites with smooth animations.</p>
-    <button>View My Work</button>
+    <p>
+      I design clean, modern websites with smooth animations and
+      a futuristic vibe.
+    </p>
+    <button onclick="location.href='#projects'">View My Work</button>
   </section>
 
+  <!-- ===== ABOUT ===== -->
   <section id="about" class="section reveal">
     <h2>About Me</h2>
     <p>
-      I’m a frontend developer focused on clean UI, animation,
-      and modern layouts.
+      I’m a frontend developer focused on clean UI, smooth animations,
+      and modern layouts. I’m building real projects and leveling up
+      every day.
     </p>
   </section>
 
-  <section id="projects" class="section reveal cards">
-    <div class="card">🚀 Neon Landing Page</div>
-    <div class="card">🎮 Game Website UI</div>
-    <div class="card">🧠 Portfolio Concept</div>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <h2 class="reveal">Projects</h2>
+
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Portfolio Website</h3>
+        <p>
+          This website. Built using HTML, CSS, and JavaScript with
+          animations, particles, and a custom loading screen.
+        </p>
+        <a href="#" target="_blank">View Project →</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Neon Landing Page</h3>
+        <p>
+          A futuristic landing page concept with glowing UI and smooth
+          scroll animations.
+        </p>
+        <a href="#">Coming Soon</a>
+      </div>
+
+      <div class="card reveal">
+        <h3>Game UI Concept</h3>
+        <p>
+          A gaming-themed website interface focused on layout,
+          typography, and effects.
+        </p>
+        <a href="#">Coming Soon</a>
+      </div>
+    </div>
   </section>
 
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="section reveal">
     <h2>Contact</h2>
-    <p>Let’s build something clean and different.</p>
+    <p>Let’s build something clean, modern, and different.</p>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     © 2026 Wyzen. Built different.
   </footer>
