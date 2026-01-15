@@ -25,15 +25,6 @@ body {
 
 #loader h1 {
   font-size: 3rem;
-  letter-spacing: 4px;
-}
-
-#loader span {
-  color: #7df9ff;
-}
-
-#loader h1 {
-  font-size: 3rem;
   letter-spacing: 6px;
 }
 
@@ -41,14 +32,7 @@ body {
   color: #7df9ff;
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* ===== BACKGROUND ===== */
+/* ===== BACKGROUND GLOW ===== */
 .bg {
   position: fixed;
   inset: 0;
@@ -63,7 +47,7 @@ body {
   to { transform: scale(1.2); }
 }
 
-/* ===== HEADER ===== */
+/* ===== NAVBAR ===== */
 .header {
   padding: 20px 60px;
   display: flex;
@@ -117,6 +101,7 @@ nav a:hover {
 }
 
 button {
+  width: fit-content;
   padding: 14px 32px;
   border-radius: 30px;
   border: none;
@@ -146,6 +131,18 @@ button {
 
 .card:hover {
   transform: translateY(-12px);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #7df9ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }
 
 /* ===== SCROLL REVEAL ===== */
