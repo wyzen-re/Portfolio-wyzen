@@ -1,23 +1,3 @@
-/* ===== LOADING SCREEN ===== */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #050510;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.6s ease;
-}
-
-#loader h1 {
-  font-size: 3rem;
-  letter-spacing: 4px;
-}
-
-#loader span {
-  color: #7df9ff;
-}
 /* ===== SCROLL REVEAL ===== */
 const reveals = document.querySelectorAll(".reveal");
 
