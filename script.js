@@ -1,3 +1,10 @@
+/* ===== LOADER ===== */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  loader.style.opacity = "0";
+  setTimeout(() => loader.remove(), 200);
+});
+
 /* ===== SCROLL REVEAL ===== */
 const reveals = document.querySelectorAll(".reveal");
 
@@ -50,10 +57,5 @@ function animate() {
   });
   requestAnimationFrame(animate);
 }
-animate();
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
 
-  loader.style.opacity = "0";
-  setTimeout(() => loader.remove(), 200);
-});
+animate();
