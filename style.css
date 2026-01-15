@@ -11,46 +11,36 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== TERMINAL ===== */
-#terminal {
+/* ===== LOADER ===== */
+#loader {
   position: fixed;
   inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #050510;
-  color: #7df9ff;
-  font-family: monospace;
-  padding: 40px;
   z-index: 9999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 1.6s;
 }
 
-.term-line {
-  font-size: 1.1rem;
-  margin-bottom: 14px;
+#loader h1 {
+  font-size: 3rem;
+  letter-spacing: 6px;
 }
 
-.hidden {
-  opacity: 0;
+#loader span {
+  color: #7df9ff;
 }
 
-.accent {
-  color: white;
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-.blink {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* ===== PARTICLES CANVAS ===== */
-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-}
-
-/* ===== GLOW BACKGROUND ===== */
+/* ===== BACKGROUND ===== */
 .bg {
   position: fixed;
   inset: 0;
@@ -74,15 +64,11 @@ canvas {
   position: sticky;
   top: 0;
   z-index: 10;
-  transition: background 0.4s, backdrop-filter 0.4s;
-}
-
-.header.scrolled {
   background: rgba(5,5,16,0.6);
   backdrop-filter: blur(12px);
 }
 
-.header h1 span {
+.header span {
   color: #7df9ff;
 }
 
