@@ -58,5 +58,5 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     loader.style.opacity = "0";
     setTimeout(() => loader.remove(), 600);
-  }, 1200);
+  }, 1000);
 });
