@@ -21,7 +21,7 @@ body {
   background: #050510;
   z-index: 9999;
   animation: fadeOut 1s ease forwards;
-  animation-delay: 1.6s;
+  animation-delay: 3.5s;
 }
 
 #loader h1 {
