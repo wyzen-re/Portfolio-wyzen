@@ -157,13 +157,7 @@ button {
   transform: translateY(0);
 }
 
-a {
-  color: #00ffff;
-  text-decoration: none;
-  }
-a:hover {
-  text-shadow: 0 0 8px #00ffff:
-}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
