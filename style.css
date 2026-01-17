@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +28,11 @@ body {
   transition: opacity 0.5s ease;
 }
 
+#loader h1 {
+  font-size: 3rem;
+  letter-spacing: 6px;
+}
+
 #loader span {
   color: #7df9ff;
 }
@@ -43,7 +49,9 @@ body {
 }
 
 @keyframes bgMove {
-  to { transform: scale(1.2); }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 /* ===== NAVBAR ===== */
@@ -55,8 +63,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(5,5,16,0.6);
+  background: rgba(5, 5, 16, 0.6);
   backdrop-filter: blur(12px);
+}
+
+.header h1 {
+  font-weight: 700;
 }
 
 .header span {
@@ -114,6 +126,7 @@ nav a.active {
 }
 
 button {
+  width: fit-content;
   padding: 14px 32px;
   border-radius: 30px;
   border: none;
@@ -127,6 +140,11 @@ button {
   padding: 120px 60px;
 }
 
+.section h2 {
+  margin-bottom: 20px;
+}
+
+/* ===== PROJECT CARDS ===== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -136,13 +154,33 @@ button {
 .card {
   padding: 40px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
   transition: transform 0.3s;
 }
 
 .card:hover {
   transform: translateY(-12px);
+}
+
+/* ===== PROJECT LINKS (NEON CYAN) ===== */
+.card a {
+  color: #7df9ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.card a:visited {
+  color: #7df9ff;
+}
+
+.card a:hover {
+  color: #7df9ff;
+  text-shadow:
+    0 0 5px #7df9ff,
+    0 0 10px #7df9ff,
+    0 0 20px rgba(125, 249, 255, 0.8);
 }
 
 /* ===== SCROLL REVEAL ===== */
@@ -175,6 +213,15 @@ canvas {
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  .hero h2 { font-size: 2.4rem; }
-  .section { padding: 80px 30px; }
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .section {
+    padding: 80px 30px;
+  }
+
+  .header {
+    padding: 16px 30px;
+  }
 }
