@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== LOADING SCREEN ===== */
+/* ===== LOADER ===== */
 #loader {
   position: fixed;
   inset: 0;
@@ -23,27 +23,10 @@ body {
   transition: opacity 0.5s ease;
 }
 
-#loader h1 {
-  font-size: 3rem;
-  letter-spacing: 6px;
-}
-
 #loader span {
   color: #7df9ff;
 }
-/* ===== PARTICLES CANVAS ===== */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
 
-  width: 100vw;
-  height: 100vh;
-
-  pointer-events: none;
-
-  z-index: -2;
-}
 /* ===== BACKGROUND GLOW ===== */
 .bg {
   position: fixed;
@@ -52,11 +35,21 @@ canvas {
     radial-gradient(circle at 20% 20%, rgba(125,249,255,0.15), transparent 40%),
     radial-gradient(circle at 80% 60%, rgba(79,172,254,0.15), transparent 40%);
   animation: bgMove 12s ease-in-out infinite alternate;
-  z-index: -3;
+  z-index: -1;
 }
 
 @keyframes bgMove {
   to { transform: scale(1.2); }
+}
+
+/* ===== PARTICLES CANVAS ===== */
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* ===== NAVBAR ===== */
@@ -113,7 +106,6 @@ nav a:hover {
 }
 
 button {
-  width: fit-content;
   padding: 14px 32px;
   border-radius: 30px;
   border: none;
@@ -145,18 +137,6 @@ button {
   transform: translateY(-12px);
 }
 
-.card a {
-  display: inline-block;
-  margin-top: 15px;
-  color: #7df9ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
 /* ===== SCROLL REVEAL ===== */
 .reveal {
   opacity: 0;
@@ -169,16 +149,9 @@ button {
   transform: translateY(0);
 }
 
-
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 40px;
   opacity: 0.6;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
-  .hero h2 { font-size: 2.4rem; }
-  .section { padding: 80px 30px; }
 }
