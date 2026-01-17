@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wyzen — Portfolio</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
     rel="stylesheet"
   />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -25,7 +28,7 @@
   <header class="header">
     <h1>WY<span>ZEN</span></h1>
     <nav>
-      <a href="#home">Home</a>
+      <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
@@ -34,11 +37,13 @@
 
   <!-- ===== HERO ===== -->
   <section id="home" class="hero reveal">
+    <!-- particles live ONLY here -->
     <div id="particles-wrapper"></div>
+
     <h2>Creative <span>Web</span> Developer</h2>
     <p>
-      I design clean, modern websites with smooth animations and
-      a futuristic vibe.
+      I design clean, modern websites with smooth animations
+      and a futuristic vibe.
     </p>
     <button onclick="location.href='#projects'">View My Work</button>
   </section>
@@ -48,7 +53,8 @@
     <h2>About Me</h2>
     <p>
       I’m a frontend developer focused on clean UI, smooth animations,
-      and modern layouts.
+      and modern layouts. I’m building real projects and leveling up
+      every day.
     </p>
   </section>
 
@@ -59,19 +65,27 @@
     <div class="cards">
       <div class="card reveal">
         <h3>Portfolio Website</h3>
-        <p>This website with particles, animations, and loader.</p>
-        <a href="#">View Project →</a>
+        <p>
+          This website. Built using HTML, CSS, and JavaScript with
+          animations, particles, and a custom loader.
+        </p>
+        <a href="#" target="_blank">View Project →</a>
       </div>
 
       <div class="card reveal">
         <h3>Neon Landing Page</h3>
-        <p>Futuristic glowing UI concept.</p>
+        <p>
+          A futuristic landing page with glowing UI and smooth motion.
+        </p>
         <a href="#">Coming Soon</a>
       </div>
 
       <div class="card reveal">
         <h3>Game UI Concept</h3>
-        <p>Gaming interface experiment.</p>
+        <p>
+          A gaming-style interface focused on layout, typography,
+          and visual polish.
+        </p>
         <a href="#">Coming Soon</a>
       </div>
     </div>
@@ -80,7 +94,7 @@
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="section reveal">
     <h2>Contact</h2>
-    <p>Let’s build something clean and modern.</p>
+    <p>Let’s build something clean, modern, and different.</p>
   </section>
 
   <!-- ===== FOOTER ===== -->
@@ -88,6 +102,7 @@
     © 2026 Wyzen. Built different.
   </footer>
 
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
