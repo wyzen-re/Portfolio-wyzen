@@ -33,7 +33,7 @@ function resize() {
 window.addEventListener("resize", resize);
 resize();
 
-const particles = Array.from({ length: 60 }, () => ({
+const particles = Array.from({ length: 70 }, () => ({
   x: Math.random() * w,
   y: Math.random() * h,
   r: Math.random() * 2 + 1,
@@ -43,6 +43,7 @@ const particles = Array.from({ length: 60 }, () => ({
 
 function animate() {
   ctx.clearRect(0, 0, w, h);
+
   particles.forEach(p => {
     p.x += p.dx;
     p.y += p.dy;
@@ -52,9 +53,12 @@ function animate() {
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(125,249,255,0.6)";
+    ctx.fillStyle = "rgba(125,249,255,0.7)";
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#7df9ff";
     ctx.fill();
   });
+
   requestAnimationFrame(animate);
 }
 
