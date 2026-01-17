@@ -1,65 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050510;
+  color: white;
+  overflow-x: hidden;
+}
+
 /* ===== LOADER ===== */
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  loader.style.opacity = "0";
-  setTimeout(() => loader.remove(), 500);
-});
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #050510;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#loader span {
+  color: #7df9ff;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(125,249,255,0.15), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(79,172,254,0.15), transparent 40%);
+  animation: bgMove 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes bgMove {
+  to { transform: scale(1.2); }
+}
+
+/* ===== NAVBAR ===== */
+.header {
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(5,5,16,0.6);
+  backdrop-filter: blur(12px);
+}
+
+.header span {
+  color: #7df9ff;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  opacity: 1;
+  color: #7df9ff;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#particles-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero > *:not(#particles-wrapper) {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+}
+
+.hero span {
+  color: #7df9ff;
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 20px 0 30px;
+  opacity: 0.8;
+}
+
+button {
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #7df9ff, #4facfe);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 120px 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+}
 
 /* ===== SCROLL REVEAL ===== */
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  const trigger = window.innerHeight * 0.85;
-  reveals.forEach(el => {
-    if (el.getBoundingClientRect().top < trigger) {
-      el.classList.add("active");
-    }
-  });
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s ease;
 }
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-/* ===== PARTICLES ===== */
-const canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
-const ctx = canvas.getContext("2d");
-
-let w, h;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
-
-const particles = Array.from({ length: 70 }, () => ({
-  x: Math.random() * w,
-  y: Math.random() * h,
-  r: Math.random() * 2 + 1,
-  dx: (Math.random() - 0.5) * 0.4,
-  dy: (Math.random() - 0.5) * 0.4
-}));
-
-function animate() {
-  ctx.clearRect(0, 0, w, h);
-
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > w) p.dx *= -1;
-    if (p.y < 0 || p.y > h) p.dy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(125,249,255,0.7)";
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = "#7df9ff";
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-animate();
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+}
+
+/* ===== CANVAS ===== */
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .hero h2 { font-size: 2.4rem; }
+  .section { padding: 80px 30px; }
+}
